@@ -1,0 +1,167 @@
+/* Global Items */
+@import url("https://fonts.googleapis.com/css?family=Lato:400");
+* {
+    margin:0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+html {
+    font-family: Lato,sans-serif;
+    font-size: 15px;
+    line-height: 1.5;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    -moz-font-feature-settings: "liga" on;
+}
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+.container{
+    width: 840px;
+    margin: 0 auto;
+}
+
+/*define grid */
+.gridBlock{
+    width: 100%;
+    display: flex;
+    margin-bottom: 30px;
+    overflow: hidden;
+    margin-top: 50px;
+    /* Layouts : We define 4 layouts */
+    .oneByGridBlock{
+        width: 100%;
+    }
+    .twoByGridBlock{
+        width: 50%;
+        margin-right: 30px;
+    }
+    .twoByGridBlock:last-child{
+        margin-right: 0px;
+    }
+    .threeByGridBlock{
+        width: 33.3%;
+        margin-right: 30px;
+    }
+    .threeByGridBlock:last-child{
+        margin-right: 0px;
+    }
+    .fourByGridBlock{
+        width: 25%;
+        margin-right: 25px;
+    }
+    .fourByGridBlock:last-child{
+        margin-right: 0px;
+    }
+    /* Style on images*/
+    img{
+        width: 72.5%;
+        margin: 0 auto;
+        display: block;
+    }
+}
+
+/* Item List */
+ul{
+    &.inlineList{
+        width: 100%;
+        display: inline-block;
+        li{
+            display: inline-block;
+            margin-right: 10px;
+        }
+    }
+    &.oneColumn{
+        width: 100%;
+        li {
+            margin-bottom: 45px;
+        }
+    }
+    &.twoColumn{
+        width: 100%;
+        li {
+            margin-bottom: 45px;        
+        }
+        margin-right: 45px;
+    }
+}
+
+/* Style on Text*/
+p{
+    display: block;
+    width: 100%;
+    margin-top: 1em;
+    font-size: 1em;
+    line-height: 1.35;
+    font-weight: 400;
+    color: #111;
+    &.hero{
+        font-size: 1.728em;
+    }
+    &.heading{
+        font-size: 2.16em;
+        margin: 3.5em 0 .4em;
+        color: #111;
+    }
+    &.subheading{
+        font-size: 1.2em;
+        margin-top: 1.2em;
+        color: #111;
+    }
+    &.paragraph{
+        color: #666;
+    }
+    span {
+        &.new{
+
+        }
+    }
+}
+/* Define Box */
+.gridBox {
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+    -moz-box-shadow: 0 10px 6px -6px #777;
+     box-shadow: 0 10px 6px -6px #777;
+     background: white;
+}
+
+
+/* Componenets*/
+a, a:hover {
+    color: #AAAAAA;
+    text-decoration: none;
+}
+
+/* Define Gaps */
+.regular_gap{
+    margin-top:15px;
+}
+.large_gap{
+    margin-top:25px;
+}
+.xlarge_gap{
+    margin-top:35px;
+}
+.section_gap{
+    margin-top: 100px;
+}
+
+/* Define Text Align */
+.textCenter{
+    text-align: center;
+}
+.textLeft{
+    text-align: left;
+}
+/* Custom Margin and padding */
+.noMargin{
+    margin: 0;
+}
+.noPadding{
+    padding: 0;
+}
+
