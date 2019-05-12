@@ -1,4 +1,19 @@
+
+/*Mixins*/
+@mixin for-size($size) {
+    @if $size == phone {
+      @media (max-width: 640px) { @content; }
+    } @else if $size == tablet {
+      @media (max-width: 840px) { @content; }
+    } @else if $size == desktop{
+      @media (min-width: 901px) { @content; }
+    } @else if $size == big-desktop-up {
+      @media (min-width: 1800px) { @content; }
+    }
+}
 /* Global Items */
+
+
 @import url("https://fonts.googleapis.com/css?family=Lato:400");
 * {
     margin:0px;
@@ -6,62 +21,95 @@
     box-sizing: border-box;
 }
 html {
-    font-family: Lato,sans-serif;
-    font-size: 15px;
-    line-height: 1.5;
-    font-weight: 400;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-rendering: optimizeLegibility;
     -moz-font-feature-settings: "liga" on;
 }
 body {
-    margin: 0;
-    padding: 0;
-    border: 0;
+    font-family: Lato,sans-serif;
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.8;
+    color: #868e96;
+    background-color: #fff;
 }
+
 .container{
     width: 840px;
     margin: 0 auto;
+    @include for-size(tablet) {    
+        width: 100%;
+        padding: 0 80px;
+     }
+     @include for-size(big-phone) {    
+        width: 100%;
+        padding: 0 50px;
+     }
+    @include for-size(phone) {    
+        width: 100%;
+        padding: 0 20px;
+     }
 }
 
 /*define grid */
+.section{
+    margin-top: 120px;
+}
 .gridBlock{
+    @include for-size(phone) {    
+        display: block;
+    }
     width: 100%;
     display: flex;
-    margin-bottom: 30px;
     overflow: hidden;
-    margin-top: 50px;
     /* Layouts : We define 4 layouts */
-    .oneByGridBlock{
+    .oneByOne{
         width: 100%;
     }
-    .twoByGridBlock{
+    .oneByTwo{
+        @include for-size(phone) {    
+            width: 100%;
+            margin-right:0;
+            margin-bottom:50px;
+         }
         width: 50%;
-        margin-right: 30px;
     }
-    .twoByGridBlock:last-child{
-        margin-right: 0px;
+    .oneByThree{
+        @include for-size(phone) {    
+            width: 100%;
+            margin-right:0;
+            margin-bottom:50px;
+         }
+        width: 33.33%;
     }
-    .threeByGridBlock{
-        width: 33.3%;
-        margin-right: 30px;
-    }
-    .threeByGridBlock:last-child{
-        margin-right: 0px;
-    }
-    .fourByGridBlock{
+    .oneByFour{
+        @include for-size(phone) {    
+            width: 100%;
+            margin-right:0;
+            margin-bottom:50px;
+         }
         width: 25%;
-        margin-right: 25px;
     }
-    .fourByGridBlock:last-child{
-        margin-right: 0px;
+    .twoByThree{
+        width: 66.66%;
+        @include for-size(phone) {    
+            width: 100%;
+            margin-right:0;
+            margin-bottom:50px;
+         }
     }
-    /* Style on images*/
-    img{
-        width: 72.5%;
-        margin: 0 auto;
-        display: block;
+    .oneByTwo,
+    .oneByThree,
+    .oneByFour,
+    .twoByThree {
+        margin-right: 30px;
+        &:last-child{
+            margin-right: 0px;
+        }
+    }
+    img {
+        width: 100%;
     }
 }
 
@@ -90,30 +138,94 @@ ul{
     }
 }
 
+// nav bar
+.navBar{
+    z-index: 100;
+    width: 100%;
+    padding: 10px;
+    &.scrolled{
+        position: fixed;
+        right: 0;
+        left: 0;
+        top: 0;
+        margin-top: -130px;
+        background: #fff !important;
+        transition: .3s all ease-out;
+        -webkit-box-shadow: 0px 1px 10px -2px rgba(0, 0, 0, 0.15);
+        -moz-box-shadow: 0px 1px 10px -2px rgba(0, 0, 0, 0.15);
+        box-shadow: 0px 1px 10px -2px rgba(0, 0, 0, 0.15);
+        color: #111;
+        a { color: #111;}
+    }
+    &.opened{
+        margin-top: 0px;
+    }
+    .oneByTwo{
+        @include for-size(phone) {    
+            margin:0 auto;
+        }
+    }
+    ul {
+        @include for-size(phone) {    
+            text-align: center;
+        }
+    }
+}
+
 /* Style on Text*/
-p{
+p {
     display: block;
     width: 100%;
     margin-top: 1em;
-    font-size: 1em;
-    line-height: 1.35;
-    font-weight: 400;
-    color: #111;
-    &.hero{
-        font-size: 1.728em;
+    &.heroText{
+        font-size: 2.97rem;
+        line-height: 1.2;
+        color: #212529;
+        width: 800px;
+        @include for-size(tablet) {    
+            width: 100%;
+        }
     }
-    &.heading{
-        font-size: 2.16em;
-        margin: 3.5em 0 .4em;
-        color: #111;
+    &.sectionHeading{
+        font-size: 2.6rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.1;
+        font-weight: 300 !important;
+        font-size: 1.75rem;
+        color: #212529;
     }
-    &.subheading{
-        font-size: 1.2em;
-        margin-top: 1.2em;
-        color: #111;
+    &.sectionSubHeading{
+        color: rgba(0, 0, 0, 0.3) !important;
+        text-transform: uppercase;
+    }
+    &.itemHeading{
+        margin-bottom: 0.5rem;
+        line-height: 1.1;
+        font-weight: 300 !important;
+        font-size: 1.25rem;
+        color: #212529;
     }
     &.paragraph{
-        color: #666;
+        font-size: 15px!important;
+        font-weight: 300;
+        color: #868e96;
+    }
+    &.price {
+        span {
+            font-size: 18px;
+            color: #adb5bd;
+            text-transform: uppercase;
+            &.value{
+                font-size: 50px;
+                color: #1d82ff;
+                }
+            &.dolor {
+                font-size: 20px;
+                vertical-align: top;
+                color: #1d82ff;
+            
+                }
+        }
     }
     span {
         &.new{
@@ -129,6 +241,74 @@ p{
      background: white;
 }
 
+.box{
+    border: 1px solid #e9ecef !important;
+    padding: 3rem !important;
+    &.active{
+        border-color: #1d82ff !important;
+    }
+}
+
+/* Input Form */
+.inputForm{
+    input, select{
+        background: #f2f2f2;
+        transition: .3s all ease;
+        border: 1px solid #f2f2f2;
+        border-radius: 0.25rem;
+        display: block;
+        width: 100%;
+        padding: 0.5rem 0.75rem;
+        font-size: 1rem;
+        line-height: 1.25;
+        height: 50px;
+        color: #495057;
+        margin-bottom: 1rem;
+        outline: none;
+        &:focus{
+            border-color: #1d82ff !important;
+            background: #ffffff;
+        }
+    }
+}
+
+/* Define Button */
+
+.btn-shadow-blue {
+    -webkit-box-shadow: 0px 15px 28px -5px rgba(29, 130, 255, 0.45);
+    -moz-box-shadow: 0px 15px 28px -5px rgba(29, 130, 255, 0.45);
+    box-shadow: 0px 15px 28px -5px rgba(29, 130, 255, 0.45);
+}
+.btn {
+    display: inline-block;
+    font-weight: 300;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    border: 1px solid transparent;
+    padding: 0.5rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.25;
+    border-radius: 0.25rem;
+    -webkit-transition: all 0.15s ease-in-out;
+    -o-transition: all 0.15s ease-in-out;
+    transition: all 0.15s ease-in-out;
+    &.primary{
+        color: #fff;
+        background-color: #1d82ff;
+        border-color: #1d82ff;
+        &.shadow{
+            -webkit-box-shadow: 0px 15px 28px -5px rgba(29, 130, 255, 0.45);
+            -moz-box-shadow: 0px 15px 28px -5px rgba(29, 130, 255, 0.45);
+            box-shadow: 0px 15px 28px -5px rgba(29, 130, 255, 0.45);
+        }
+    }
+}
+
 
 /* Componenets*/
 a, a:hover {
@@ -137,17 +317,17 @@ a, a:hover {
 }
 
 /* Define Gaps */
-.regular_gap{
-    margin-top:15px;
+.regularGap{
+    margin-top:50px;
 }
-.large_gap{
-    margin-top:25px;
+.largeGap{
+    margin-top:75px;
 }
-.xlarge_gap{
-    margin-top:35px;
+.xlargeGap{
+    margin-top:100px;
 }
-.section_gap{
-    margin-top: 100px;
+.xxlargeGap{
+    margin-top:150px;
 }
 
 /* Define Text Align */
@@ -157,11 +337,21 @@ a, a:hover {
 .textLeft{
     text-align: left;
 }
+.textRight{
+    text-align: right;
+}
+.alignMiddle{
+    vertical-align:middle;
+}
 /* Custom Margin and padding */
 .noMargin{
-    margin: 0;
+    margin: 0 !important;
 }
 .noPadding{
-    padding: 0;
+    padding: 0 !important;
 }
+
+
+
+
 
