@@ -149,7 +149,7 @@ ul{
         left: 0;
         top: 0;
         margin-top: -130px;
-        background: #fff !important;
+        background: #fff;
         transition: .3s all ease-out;
         -webkit-box-shadow: 0px 1px 10px -2px rgba(0, 0, 0, 0.15);
         -moz-box-shadow: 0px 1px 10px -2px rgba(0, 0, 0, 0.15);
@@ -190,23 +190,23 @@ p {
         font-size: 2.6rem;
         margin-bottom: 0.5rem;
         line-height: 1.1;
-        font-weight: 300 !important;
+        font-weight: 300;
         font-size: 1.75rem;
         color: #212529;
     }
     &.sectionSubHeading{
-        color: rgba(0, 0, 0, 0.3) !important;
+        color: rgba(0, 0, 0, 0.3) ;
         text-transform: uppercase;
     }
     &.itemHeading{
         margin-bottom: 0.5rem;
         line-height: 1.1;
-        font-weight: 300 !important;
+        font-weight: 300;
         font-size: 1.25rem;
         color: #212529;
     }
     &.paragraph{
-        font-size: 15px!important;
+        font-size: 15px;
         font-weight: 300;
         color: #868e96;
     }
@@ -336,7 +336,7 @@ a, a:hover {
 }
 .textLeft{
     text-align: left;
-}
+} 
 .textRight{
     text-align: right;
 }
@@ -349,6 +349,37 @@ a, a:hover {
 }
 .noPadding{
     padding: 0 !important;
+}
+
+/* Defining overlapping layer */
+.relativePosition{
+    position: relative;
+}
+.absolutePosition{
+    position: absolute;
+}
+
+/*  we define color scheme */
+.colorScheme{
+    color: #111111;
+    a, a:hover {
+        color: #AAAAAA;
+    }
+    p{
+        &.sectionSubHeading {
+            color: rgba(0, 0, 0, 0.3);
+        }
+    }
+    .invertColor{
+        color: #ffffff;
+        a, a:hover {
+            color: #ffffff;
+        }
+        p { 
+            color: #ffffff;
+        }
+    }
+    
 }
 
 

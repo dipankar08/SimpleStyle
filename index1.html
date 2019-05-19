@@ -9,11 +9,11 @@
             $(window).scroll(function() {
                 console.log('logging'+$(body).scrollTop());
                 if($(body).scrollTop() < 20){
-                    $('.navBar').removeClass('scrolled opened');
+                    $('.navBar').removeClass('scrolled opened').addClass('invertColor');
                 } else if($(body).scrollTop() < 30){
                     $('.navBar').removeClass('opened').addClass('scrolled');
                 } else{
-                    $('.navBar').addClass('scrolled opened');
+                    $('.navBar').addClass('scrolled opened').removeClass('invertColor');
                 }
             });
         });
@@ -36,7 +36,10 @@
         .navBar{
             color:#7a00ff;
         }
-        .pb_gradient_v1:before {
+        .backgroud{
+            padding-bottom: 150px;
+        }
+        .backgroud:before {
             background: #665fee;
             background: -moz-linear-gradient(45deg, #665fee 0%, #27c2de 100%);
             background: -webkit-linear-gradient(45deg, #665fee 0%, #27c2de 100%);
@@ -49,7 +52,7 @@
             left: 0;
             right: 0;
         }
-        .pb_gradient_v1:after {
+        .backgroud:after {
             content: "";
             position: absolute;
             bottom: -100px;
@@ -62,59 +65,67 @@
             transform: rotate(-4deg); 
             z-index: 10;
         }
+        body{
+            background-color: #f2f4f9;
+        }
     </style>
 </head>
 
-<body id="body">
+<body id="body" class="colorScheme">
     <!-- Main Body-->
+    <div class="backgroud relativePosition">
+        <div class="container relativePosition">
+            <!-- header-->
+            <div class="gridBlock navBar invertColor">
+                <div class="oneByTwo">
+                    <ul class="inlineList textLeft">
+                        <li><a href="#home">
+                            <img class="logo" src="icon.svg" alt="Interview BootCamp" height="42" width="42">
+                            <span>Ninja BootCamp</span>
+                        </a></li>
+                    </ul>
+                </div>
+                <div class="oneByTwo">
+                    <ul class="inlineList textRight">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#feature">Features</a></li>
+                        <li><a href="#price">Price</a></li>
+                        <li><a href="#faq">FAQ</a></li>
+                        <li><a href="#invite">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <!-- Home -->
+            <a name="home"></a>
+            <div class="gridBlock textCenter regularGap invertColor">
+                <div class="oneByOne">
+                        <p class="sectionSubHeading">LAND A JOB AT GOOGLE, FACEBOOK, AMAZON, MICROSOFT, AND APPLE </p>
+                        <p class="heroText">A Systematic Approach To Crack Software Interview In 12 Weeks.</p>
+                </div>
+            </div>
+            <div class="hero gridBlock xxlargeGap textCenter invertColor">
+                <div class="oneByThree">
+                    <img src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/scrum_board_cesn.svg">
+                    <p class="itemHeading textCenter ">1:1 Guidance</p>
+                    <p class="paragraph ">People come from different background and skillsets. 1:1 coaching provides personalized training focusing improvement your of skillset. .</p>
+                </div>
+                <div class="oneByThree">
+                    <img src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/setup_wizard_r6mr.svg">
+                    <p class="itemHeading textCenter">Structured preparation</p>
+                    <p class="paragraph">You often waste your time or randomize yourself by solving the problem from multiple sources. We focus on structured preparation which covers all the necessary topics on time.</p>
+                </div>
+                <div class="oneByThree">
+                    <img src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/confirmation_2uy0.svg">
+                    <p class="itemHeading textCenter ">Confidently solve the unseen problem.</p>
+                    <p class="paragraph ">We focus on the techniques rather the problems. We teach you how you should start exploring the problem, finding trade-offs and how to get into the solution. </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Features-->
+    <a name="feature"></a>
     <div class="container">
-        <!-- header-->
-        <div class="gridBlock navBar ">
-            <div class="oneByTwo">
-            <ul class="inlineList textLeft">
-                <li><a href="#home">
-                    <img class="logo" src="icon.svg" alt="Interview BootCamp" height="42" width="42">
-                    <span>Ninja BootCamp</span>
-                </a></li>
-            </ul>
-        </div>
-        <div class="oneByTwo">
-            <ul class="inlineList textRight">
-                <li><a href="#home">Home</a></li>
-                <li><a href="#feature">Features</a></li>
-                <li><a href="#price">Price</a></li>
-                <li><a href="#faq">FAQ</a></li>
-                <li><a href="#invite">Contact Us</a></li>
-            </ul>
-        </div>
-        </div>
-        <!-- Home -->
-        <a name="home"></a>
-        <div class="gridBlock textCenter regularGap">
-            <div class="oneByOne">
-                    <p class="sectionSubHeading">Land a job at Google, facebook, Amazon, Microsoft and Apple </p>
-                    <p class="heroText">A Systematic Approach To Crack Software Interview In 12 Weeks.</p>
-            </div>
-        </div>
-        <div class="hero gridBlock xxlargeGap textCenter">
-            <div class="oneByThree">
-                <img src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/scrum_board_cesn.svg">
-                <p class="itemHeading textCenter ">1:1 guidence</p>
-                <p class="paragraph ">Your resume is also available on your public URL - where visitors can view and download your resume.</p>
-            </div>
-            <div class="oneByThree">
-                <img src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/setup_wizard_r6mr.svg">
-                <p class="itemHeading textCenter">Structured preparation</p>
-                <p class="paragraph">Nobody reads through a 4 page CV. Only showcase your most important & key info on your resume.</p>
-            </div>
-            <div class="oneByThree">
-                <img src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/confirmation_2uy0.svg">
-                <p class="itemHeading textCenter ">100% Gurretee of success</p>
-                <p class="paragraph ">We talked to a lot of startups, companies and recruiters in order to design the perfect theme.</p>
-            </div>
-        </div>
-        <!-- Features-->
-        <a name="feature"></a>
         <div class="gridBlock textCenter xxlargeGap">
             <div class="oneByOne">
                     <p class="sectionSubHeading noMargin">FOCUS AREAS</p>
@@ -127,7 +138,7 @@
             </div>
             <div class="twoByThree">
                 <p class="itemHeading noMargin">Interviews are tough: Structure your Prep</p>
-                <p class="paragraph">There are too much resources in internet which can easily randamize you. We are here to setup the right starcture of interview preparation ensuring you can cover fundamental concept of DS, Algorithm, problem solving to system design before the interview.</p>
+                <p class="paragraph">There are too many resources on the internet which can easily randomize you. We are here to set up the right structure of interview preparation ensuring you can cover the fundamental concept of DS, Algorithm, problem solving to system design before the interview.</p>
             </div>
         </div>
         <div class="gridBlock regularGap">
@@ -135,8 +146,8 @@
                         <img src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/code_review_l1q9.svg">
                     </div>
             <div class="twoByThree">
-                <p class="itemHeading noMargin">Interviers looking for coding signal!</p>
-                <p class="paragraph">More than 50% of candidate got rejected as they got stuck while implenting the algorithm. A perfact coding involes choosing right data strcuture, handing all the edge-case while puting your thoughts into whiteboard.</p>
+                <p class="itemHeading noMargin">Interviewers looking for the coding signal!</p>
+                <p class="paragraph">More than 50% of candidate got rejected as they got stuck while implementing the algorithm. A perfect coding involves choosing the right data structure, handing all the edge-case while putting your thoughts into a whiteboard.</p>
             </div>
       
         </div>
@@ -145,8 +156,8 @@
                 <img src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/predictive_analytics_kf9n.svg">
             </div>
             <div class="twoByThree">
-                <p class="itemHeading">Focus on Techniques which solve many problem.</p>
-                <p class="paragraph">Unfortunately, most websites focus on problems rather than techniques.Here, we focus on techniques which can solves multiple problem. For example, mastering "dynamic programing", you can solve many problem like "longest palindome substring" or "minimum sorted path in a grid".</p>
+                <p class="itemHeading">Focus on techniques which solve the unseen problem.</p>
+                <p class="paragraph">Unfortunately, most websites focus on problems rather than techniques. Here, we focus on techniques which can solve multiple problems. For example, mastering "dynamic programming", you can solve problems like "longest palindrome substring" or "minimum sorted path in a grid".</p>
             </div>
         </div>
         <div class="gridBlock regularGap">
@@ -155,7 +166,7 @@
                 </div>
                 <div class="twoByThree">
                     <p class="itemHeading">Approaches are more important that solution itself.</p>
-                    <p class="paragraph">Most interview questions are open-ended - they are more than one solution exist. Interviews enjoy how you brainstome the problem and how you approach to the solution. </p>
+                    <p class="paragraph">Most interview questions are open-ended - they are more than one solution exists. Interviews enjoy how you brainstorm the problem and how you approach the solution.</p>
                 </div>
         </div>
         <div class="gridBlock regularGap">
@@ -163,32 +174,36 @@
                         <img src="https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/time_management_30iu.svg">
                     </div>
             <div class="twoByThree">
-                <p class="itemHeading">Practice for 45-minute interview!</p>
-                <p class="paragraph">Mostly, all the big tech company has 45 min of interview where the questions are difficult enough that you're only expected to answer that one/two question within the time. In this time, you are expected brainstorming the approachs,tread-off the alternatiev solution,optimize the solution, code and finding out the complexity. It's mostly impossible to achive without practice and guidence. </p>
+                <p class="itemHeading">Practice for the 45-minute interview!!</p>
+                <p class="paragraph">Mostly, all the big tech company has 45 min of the interview where the questions are difficult enough that you're only expected to answer that one/two question within the time. In this time, you are expected to brainstorm the approaches,tread-off the alternatives, optimize the solution, code and finding out the complexity. It's almost impossible to achieve without practice and guidance.</p>
             </div>
-            
         </div>
-         <!-- Invite-->
+    </div>
+    <!-- Invite-->
+    <div class="container">
          <a name="invite"></a>
          <div class="gridBlock textCenter xxlargeGap">
-                <div class="twoByThree">
-                       <p class="sectionSubHeading noMargin">REQUEST INVITE</p>
-                       <p class="sectionHeading noMargin">Interested? Request for a call back?</p>
-                </div>
-                <div class="oneByThree inputForm">
-                        <input type="text" placeholder="Full Name">
-                        <input type="text" placeholder="Mobile Number">
-                        <input type="text" placeholder="Email Address">
-                        <select>
-                                <option value="" selected="">Type</option>
-                                <option value="personal">Personal Ninja</option>
-                                <option value="group">Group Ninja</option>
-                        </select>
-                        <input type="submit" class="btn primary" value="Request">
-                 </div>
+            <div class="twoByThree">
+                    <p class="sectionSubHeading">REQUEST INVITE</p>
+                    <p class="sectionHeading">Interested! Request for a callback?</p>
+                    <p class="paragraph">Once you submit the request, you will get an immediate email confirmation. Then, you can expect a callback over phone within a week.</p>
             </div>
+            <div class="oneByThree inputForm">
+                    <input type="text" placeholder="Full Name">
+                    <input type="text" placeholder="Mobile Number">
+                    <input type="text" placeholder="Email Address">
+                    <select>
+                            <option value="" selected="">Type</option>
+                            <option value="personal">Personal Ninja</option>
+                            <option value="group">Group Ninja</option>
+                    </select>
+                    <input type="submit" class="btn primary" value="Request">
+            </div>
+        </div>
+    </div>
 
-          <!-- Price-->
+    <!-- Price-->
+    <div class="container">
         <a name="price"></a>
         <div class="gridBlock textCenter xxlargeGap">
             <div class="oneByOne">
@@ -201,7 +216,7 @@
                     <div class="box">
                             <p class="itemHeading noMargin">Personal Bootcamp</p>
                             <p class="price"><span class="dolor">$</span><span class="value">1200</span><span class="date">12 Sessions</span></p>
-                            <p class="paragraph">Twelves 1.5-hours 1:1 bootcamp sessions (including mock interview) which will shift you to the extrme edge of interview preparation.</p>
+                            <p class="paragraph">Twelves 1.5-hours 1:1 boot camp sessions (including mock interview) which will shift you to the extreme edge of interview preparation.</p>
                             <p><a href="#" class="btn primary shadow">Get started</a></p>
                     </div>
                 </div>
@@ -209,12 +224,15 @@
                         <div class="box">
                                 <p class="itemHeading noMargin">Group Bootcamp</p>
                                 <p class="price"><span class="dolor">$</span><span class="value">500</span><span class="date">12 Session</span></p>
-                                <p class="paragraph">Twelves 1.5 hours online bootcamp sessions(In video confrence call) where we will teach 100+ problem solving techniques with example.</p>
+                                <p class="paragraph">Twelves 1.5 hours online boot camp sessions(In video conference call) where we will teach 100+ problem-solving techniques with example.</p>
                                 <p><a href="#" class="btn primary shadow">Get started</a></p>
                         </div>
                 </div>
             </div>
-        <!-- FAQ-->
+    </div>
+    
+    <!-- FAQ-->
+    <div class="container">
         <a name="faq"></a>
         <div class="gridBlock textCenter xxlargeGap">
             <div class="oneByOne">
@@ -229,12 +247,12 @@
                     <p class="paragraph ">This course is not cheap as it pays for itself many times over. A job will get you a minimum base salary of $100K. If you are switching a job, it will get you a minimum raise of $10,000. As these skills last you a lifetime, so, if you switch 4 jobs in your life, that’s $60,000 just in raises. </p>
                 </li>
                 <li>
-                    <p class="itemHeading ">When should you start this course ?</p>
-                    <p class="paragraph ">The best time is to start this course is when you are not happy with current employer and have started looking for another job or you already got a call from recruiter. If your interview is scheduled and you are not confident enough, you can start this course too.</p>
+                    <p class="itemHeading ">When should you start this course?</p>
+                    <p class="paragraph ">The best time is to start this course is when you have started looking for another job or you already contacted by a recruiter. If your interview is scheduled and you are not confident enough, you can start this course too.</p>
                 </li>
                 <li>
                     <p class="itemHeading ">There’s plenty of material online. Why do I need this course?</p>
-                    <p class="paragraph ">That is the main reason we made this course. There are too many resources( interview questions) are available online which is not realistic to solves then all for the interview. This course gives you a clear structured approach to understand the fundamental concept and technique to solve the problem. This helps to solve the any unseen problem too.</p>
+                    <p class="paragraph ">There are too many resources ( interview questions) are available online which is not realistic to solves then all for the interview. They don't provide where to start and where to end  This course gives you a clear structured approach to understand the fundamental concept and technique to solve the problem. This helps to solve any unseen problem too.</p>
                 </li>
                 <li>
                     <p class="itemHeading ">What are the goals of these programs?</p>
@@ -273,12 +291,13 @@
                     <p class="paragraph ">Each live session is weekly for 2 hours over video conference. In each session, we will cover 1-5 problem solving techniques and some question related to this. In case of mock interview sessions: in first hour, we will have a mock interview and next hours will be feedback on interview + detailed analysis of the solution.</p>
                 </li>
                 <li>
-                        <p class="itemHeading ">What if I am unhappy with the course?</p>
-                        <p class="paragraph ">We would never want you to be unhappy! If you are unsatisfied with the course within the first 2 sessions, please talk to us and we will give you a full refund. No questions asked.</p>
+                    <p class="itemHeading ">What if I am unhappy with the course?</p>
+                    <p class="paragraph ">If you are unsatisfied with the course within the first 2 sessions, please talk to us and we will give you a full refund. No questions asked.</p>
                     </li>
             </ul>
         </div>
     </div>
+
     <!-- Footer-->
     <div class="gridBlock section_gap">
         <ul class="inlineList textCenter">
