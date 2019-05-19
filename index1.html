@@ -16,7 +16,25 @@
                     $('.navBar').addClass('scrolled opened').removeClass('invertColor');
                 }
             });
+            $('#btn').click(function(){
+                let data = {"_cmd":"insert", "name": $("#name").val(), "phone" : $("#phone").val(), "email": $("#email").val(), "type": $("#type").val()};
+                if(!(data.name && data.phone && data.type && data.email)){
+                    $('#output').addClass('error').removeClass('success').html("Error:You need to fillup all data.").show();
+                    return;
+                }
+                $.ajax({
+                    type: "POST",
+                    url: 'http://simplestore.dipankar.co.in/api/nodel_codeninja',
+                    dataType: 'json',
+                    data: JSON.stringify(data),
+                    success: function (data) {
+                        $('#output').addClass('success').removeClass('error').html("Success: Request received").show();
+                    }
+                });
+            })
         });
+
+
     </script>
     <style>
         .box{
@@ -189,15 +207,16 @@
                     <p class="paragraph">Once you submit the request, you will get an immediate email confirmation. Then, you can expect a callback over phone within a week.</p>
             </div>
             <div class="oneByThree inputForm">
-                    <input type="text" placeholder="Full Name">
-                    <input type="text" placeholder="Mobile Number">
-                    <input type="text" placeholder="Email Address">
-                    <select>
+                    <p id="output" class="textCenter hide"></p>
+                    <input type="text" id="name" placeholder="Full Name">
+                    <input type="text" id="phone" placeholder="Mobile Number">
+                    <input type="text" id ="email" placeholder="Email Address">
+                    <select id ="type">
                             <option value="" selected="">Type</option>
                             <option value="personal">Personal Ninja</option>
                             <option value="group">Group Ninja</option>
                     </select>
-                    <input type="submit" class="btn primary" value="Request">
+                    <input type="submit" class="btn primary" id ="btn" value="Request">
             </div>
         </div>
     </div>
