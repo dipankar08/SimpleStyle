@@ -1,6 +1,11 @@
 # SimpleStyle
 World's simplest web UI layout framework. This provides the key dom classes which should be used to build a responsive website as fast as possible.
 
+### How to use it:
+Download https://raw.githubusercontent.com/dipankar08/SimpleStyle/master/simplestyle.scss and use it by adding the below line. 
+`<link rel="stylesheet" type="text/css" href="simplestyle.css" />`
+
+
 ### Supported features. 
 Below table shows a list of features which is used to build a responsive website. 
 
