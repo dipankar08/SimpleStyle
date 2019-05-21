@@ -23,6 +23,10 @@ Below table shows a list of features which is used to build a responsive website
 | Color scheme | .colorScheme, .invertColor | support default blue color schem, where invertColor is used for dardk backgrouds   simple.  |
 | Notification | .notify.error, .notify.success, .notify.info | provides the style for noticfication |
 
+### Examples
+Here are some example which is built using this style.
+http://dipankar.co.in/apps/interview/index.html
+
 
 
 
