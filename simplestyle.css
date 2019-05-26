@@ -1,3 +1,4 @@
+/* Building colors */
 /*Mixins*/
 /* Global Items */
 @import url("https://fonts.googleapis.com/css?family=Lato:400");
@@ -20,16 +21,14 @@ body {
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.8;
+}
+
+.theme-white body {
   color: #868e96;
-  background-color: #fff;
 }
 
 body.inspect div {
   border: 1px solid green;
-}
-
-body.inspect div:focus {
-  border: 1px solid red;
 }
 
 /* Defing the gap in mobile devices */
@@ -140,10 +139,8 @@ body.inspect div:focus {
 
 /* Input Form */
 .inputForm input, .inputForm select, .inputForm textarea {
-  background: #f2f2f2;
   -webkit-transition: .3s all ease;
   transition: .3s all ease;
-  border: 1px solid #f2f2f2;
   border-radius: 0.25rem;
   display: block;
   width: 100%;
@@ -151,15 +148,18 @@ body.inspect div:focus {
   font-size: 1rem;
   line-height: 1.25;
   height: 50px;
-  color: #495057;
   margin-top: 1rem;
   outline: none;
   border: 1px solid transparent;
 }
 
-.inputForm input:focus, .inputForm select:focus, .inputForm textarea:focus {
-  border-color: #1d82ff;
-  background: #ffffff;
+.theme-white .inputForm input, .theme-white .inputForm select, .theme-white .inputForm textarea {
+  color: #495057;
+  background: #f2f2f2;
+}
+
+.theme-white .inputForm input:focus, .theme-white .inputForm select:focus, .theme-white .inputForm textarea:focus {
+  border-color: #ffffff;
 }
 
 .inputForm input[type="radio"], .inputForm select[type="radio"], .inputForm textarea[type="radio"] {
@@ -171,11 +171,19 @@ body.inspect div:focus {
 }
 
 .inputForm input.success, .inputForm select.success, .inputForm textarea.success {
-  border: 1px solid #00FF00;
+  border: 1px solid;
+}
+
+.theme-white .inputForm input.success, .theme-white .inputForm select.success, .theme-white .inputForm textarea.success {
+  border-color: green;
 }
 
 .inputForm input.error, .inputForm select.error, .inputForm textarea.error {
-  border: 1px solid #FF0000;
+  border: 1px solid;
+}
+
+.theme-white .inputForm input.error, .theme-white .inputForm select.error, .theme-white .inputForm textarea.error {
+  border-color: red;
 }
 
 /* Define Button */
@@ -201,6 +209,9 @@ body.inspect div:focus {
 
 .btn.primary {
   color: #ffffff;
+}
+
+.theme-white .btn.primary {
   background-color: #1d82ff;
   border-color: #1d82ff;
 }
@@ -213,6 +224,9 @@ body.inspect div:focus {
 .btn.secondary {
   color: #111111;
   background-color: transparent;
+}
+
+.theme-white .btn.secondary {
   border-color: #1d82ff;
 }
 
@@ -291,10 +305,13 @@ p {
   margin-top: 1em;
 }
 
+.theme-white p {
+  color: #868e96;
+}
+
 p.heroText {
   font-size: 2.97rem;
   line-height: 1.2;
-  color: #212529;
   width: 800px;
 }
 
@@ -304,18 +321,28 @@ p.heroText {
   }
 }
 
+.theme-white p.heroText {
+  color: #212529;
+}
+
 p.sectionHeading {
   font-size: 2.6rem;
   margin-bottom: 0.5rem;
   line-height: 1.1;
   font-weight: 300;
   font-size: 1.75rem;
+}
+
+.theme-white p.sectionHeading {
   color: #212529;
 }
 
 p.sectionSubHeading {
-  color: rgba(0, 0, 0, 0.3);
   text-transform: uppercase;
+}
+
+.theme-white p.sectionSubHeading {
+  color: #868e96;
 }
 
 p.itemHeading {
@@ -323,75 +350,162 @@ p.itemHeading {
   line-height: 1.1;
   font-weight: 300;
   font-size: 1.25rem;
+}
+
+.theme-white p.itemHeading {
   color: #212529;
 }
 
 p.paragraph {
   font-size: 15px;
   font-weight: 300;
-  color: #868e96;
 }
 
 p.price span {
   font-size: 18px;
-  color: #adb5bd;
   text-transform: uppercase;
 }
 
 p.price span.value {
   font-size: 50px;
+}
+
+.theme-white p.price span.value {
   color: #1d82ff;
 }
 
 p.price span.dolor {
   font-size: 20px;
   vertical-align: top;
+}
+
+.theme-white p.price span.dolor {
   color: #1d82ff;
 }
 
+p span.bold {
+  font-weight: bold;
+}
+
+p span.italic {
+  font-style: italic;
+}
+
 p span.batch {
-  color: #ffffffff;
+  color: #ffffff;
   padding: 5px 8px;
   font-family: monospace;
   font-size: 12px;
   border-radius: 12px;
 }
 
-p span.batch.green {
-  background: #0f5a0f;
+.theme-white p span.batch.green {
+  background: green;
 }
 
-p span.batch.red {
-  background: #c92222;
+.theme-white p span.batch.red {
+  background: red;
 }
 
-p span.batch.blue {
-  background: #1818b1;
+.theme-white p span.batch.blue {
+  background: blue;
 }
 
 /* Define Box - TESTED */
 .box {
-  border: 1px solid #e9ecef !important;
   padding: 3rem !important;
 }
 
-.box.active {
+.theme-white .box {
+  border: 1px solid #e9ecef !important;
+}
+
+.theme-light .box {
+  border: 1px solid !important;
+}
+
+.theme-dark .box {
+  border: 1px solid !important;
+}
+
+.theme-white .box.active {
   border-color: #1d82ff !important;
 }
 
-.box.shadow {
+.theme-light .box.active {
+  border-color: !important;
+}
+
+.theme-dark .box.active {
+  border-color: !important;
+}
+
+.theme-white .box.shadow {
   -webkit-box-shadow: 0 10px 6px -6px #777;
   box-shadow: 0 10px 6px -6px #777;
   background: white;
 }
 
+.theme-light .box.shadow {
+  -webkit-box-shadow: 0 10px 6px -6px;
+  box-shadow: 0 10px 6px -6px;
+  background: white;
+}
+
+.theme-dark .box.shadow {
+  -webkit-box-shadow: 0 10px 6px -6px;
+  box-shadow: 0 10px 6px -6px;
+  background: white;
+}
+
 /* Componenets*/
-a, a:hover {
-  color: #AAAAAA;
+a {
   text-decoration: none;
 }
 
+.theme-white a {
+  color: #868e96;
+}
+
+.theme-white a:hover {
+  color: #1d82ff;
+}
+
+.notification {
+  padding: 6px 8px;
+  border-radius: 5px;
+}
+
+.theme-white .notification p {
+  color: #ffffff;
+  margin: 0;
+}
+
+.theme-light .notification p {
+  margin: 0;
+}
+
+.theme-dark .notification p {
+  margin: 0;
+}
+
+.theme-white .notification.success {
+  background: green;
+}
+
+.theme-white .notification.info {
+  background: blue;
+}
+
+.theme-white .notification.error {
+  background: red;
+}
+
 /* Define Gaps */
+.lineGap {
+  margin-top: 1em;
+}
+
 .regularGap {
   margin-top: 50px;
 }
@@ -443,7 +557,7 @@ a, a:hover {
   position: absolute;
 }
 
-/*  we define color scheme */
+/*  we define color scheme  - We need to how this can effect the theme*/
 .colorScheme {
   color: #111111;
   background: transparent;
@@ -468,18 +582,5 @@ a, a:hover {
 
 .colorScheme .invertColor p {
   color: #ffffff;
-}
-
-.colorScheme .success {
-  color: green;
-}
-
-.colorScheme .error {
-  color: red;
-}
-
-.colorScheme .classicColor {
-  color: #00FF00;
-  background: #111111;
 }
 /*# sourceMappingURL=simplestyle.css.map */

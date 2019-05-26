@@ -1,8 +1,52 @@
 
-$color-red: #FF0000;
-$color-green: #00FF00;
-$color-blue: #0000FF;
-$color-main: #1d82ff;
+/* Building colors */
+@mixin themify($themes: $themes) {
+    @each $theme, $map in $themes {
+      .theme-#{$theme} & {
+        $theme-map: () !global;
+            @each $key, $submap in $map {
+            $value: map-get(map-get($themes, $theme), '#{$key}');
+            $theme-map: map-merge($theme-map, ($key: $value)) !global;
+            }
+            @content;
+            $theme-map: null !global;
+        }
+    }
+}
+@function themed($key) {
+    @return map-get($theme-map, $key);
+}
+
+$themes: (
+    white: (
+        'themedColor': #1d82ff,
+
+        'textColor': #868e96, 
+        'textColorDark': #212529, 
+        'textColorLight': #868e96, 
+
+        'inputTextColor':#495057,
+        'inputBackgroundColor':#f2f2f2,
+        'inputBorderColor': #ffffff,
+
+        'boxBorder':#e9ecef,
+        'boxBorderActive':#1d82ff,
+        'boxBorderShadow': #777,
+
+        'colorGreen':green,
+        'colorRed':red,
+        'colorBlue':blue,
+        'colorWhite':#ffffff,
+        'colorBlack':#212121
+    ),
+    light: (
+
+    ),
+    dark: (
+
+    ),
+);
+
 $color-black: #111111;
 $color-white: #ffffff;
 
@@ -33,18 +77,17 @@ html {
     -moz-font-feature-settings: "liga" on;
 }
 body {
+    @include themify($themes) {
+        color: themed('textColor');  
+        background-color: themed('backgroundColor');  
+    }
     font-family: Lato,sans-serif;
     font-size: 1rem;
     font-weight: 300;
     line-height: 1.8;
-    color: #868e96;
-    background-color: #fff;
     &.inspect{
         div { 
             border: 1px solid green;
-        }
-        div:focus { 
-            border: 1px solid red;
         }
     }
 }
@@ -129,9 +172,11 @@ body {
 /* Input Form */
 .inputForm{
     input, select, textarea{
-        background: #f2f2f2;
+        @include themify($themes) {
+            color: themed('inputTextColor');  
+            background: themed('inputBackgroundColor');  
+        }
         transition: .3s all ease;
-        border: 1px solid #f2f2f2;
         border-radius: 0.25rem;
         display: block;
         width: 100%;
@@ -139,13 +184,13 @@ body {
         font-size: 1rem;
         line-height: 1.25;
         height: 50px;
-        color: #495057;
         margin-top: 1rem;
         outline: none;
         border: 1px solid transparent;
         &:focus{
-            border-color: $color-main ;
-            background: #ffffff;
+            @include themify($themes) {
+                border-color: themed('inputBorderColor');  
+            }
         }
         &[type="radio"]{
             width: auto;
@@ -155,10 +200,16 @@ body {
             margin-right: 3px;
         }
         &.success{
-            border: 1px solid $color-green;
+            border: 1px solid;
+            @include themify($themes) {
+                border-color: themed('colorGreen');  
+            }
         }
         &.error{
-            border: 1px solid $color-red;
+            border: 1px solid;
+            @include themify($themes) {
+                border-color: themed('colorRed');  
+            }
         }
     }
 }
@@ -185,18 +236,23 @@ body {
     transition: all 0.15s ease-in-out;
     &.primary{
         color: $color-white;
-        background-color:$color-main;
-        border-color: $color-main;
+        @include themify($themes) {
+            background-color: themed('themedColor');  
+            border-color: themed('themedColor');  
+        }
         &.shadow{
             -webkit-box-shadow: 0px 15px 28px -5px rgba(29, 130, 255, 0.45);
             -moz-box-shadow: 0px 15px 28px -5px rgba(29, 130, 255, 0.45);
             box-shadow: 0px 15px 28px -5px rgba(29, 130, 255, 0.45);
         }
     }
+    
     &.secondary{
         color: $color-black;
         background-color: transparent;
-        border-color: $color-main;
+        @include themify($themes) {
+            border-color: themed('themedColor');  
+        }
     }
 }
 
@@ -265,13 +321,18 @@ p {
     display: block;
     width: 100%;
     margin-top: 1em;
+    @include themify($themes) {
+        color: themed('textColor');  
+    }
     &.heroText{
         font-size: 2.97rem;
         line-height: 1.2;
-        color: #212529;
         width: 800px;
         @include for-size(tablet) {    
             width: 100%;
+        }
+        @include themify($themes) {
+            color: themed('textColorDark');  
         }
     }
     &.sectionHeading{
@@ -280,10 +341,14 @@ p {
         line-height: 1.1;
         font-weight: 300;
         font-size: 1.75rem;
-        color: #212529;
+        @include themify($themes) {
+            color: themed('textColorDark');  
+        }
     }
     &.sectionSubHeading{
-        color: rgba(0, 0, 0, 0.3) ;
+        @include themify($themes) {
+            color: themed('textColorLight');  
+        }
         text-transform: uppercase;
     }
     &.itemHeading{
@@ -291,45 +356,60 @@ p {
         line-height: 1.1;
         font-weight: 300;
         font-size: 1.25rem;
-        color: #212529;
+        @include themify($themes) {
+            color: themed('textColorDark');  
+        }
     }
     &.paragraph{
         font-size: 15px;
         font-weight: 300;
-        color: #868e96;
     }
     &.price {
         span {
             font-size: 18px;
-            color: #adb5bd;
             text-transform: uppercase;
             &.value{
                 font-size: 50px;
-                color: #1d82ff;
+                @include themify($themes) {
+                    color: themed('themedColor');  
                 }
+            }
             &.dolor {
                 font-size: 20px;
                 vertical-align: top;
-                color: #1d82ff;
-            
+                @include themify($themes) {
+                    color: themed('themedColor');  
                 }
+            }
         }
     }
     span {
+        &.bold{
+            font-weight: bold;
+        }
+        &.italic{
+            font-style: italic;
+        }
         &.batch{
-            color: #ffffffff;
+            color:$color-white;
             padding: 5px 8px;
             font-family: monospace;
             font-size: 12px;
             border-radius: 12px;
             &.green{
-                background: #0f5a0f;
+                @include themify($themes) {
+                    background: themed('colorGreen');  
+                }
             }
             &.red{
-                background: #c92222;;
+                @include themify($themes) {
+                    background: themed('colorRed');  
+                }
             }
             &.blue{
-                background: #1818b1;;
+                @include themify($themes) {
+                    background: themed('colorBlue');  
+                }
             }
         }
     }
@@ -337,26 +417,67 @@ p {
 
 /* Define Box - TESTED */
 .box{
-    border: 1px solid #e9ecef !important;
+    @include themify($themes) {
+        border: 1px solid themed('boxBorder') !important;
+    }
     padding: 3rem !important;
     &.active{
-        border-color: #1d82ff !important;
+        @include themify($themes) {
+            border-color: themed('themedColor') !important;
+        }
     }
     &.shadow{
-        -webkit-box-shadow: 0 10px 6px -6px #777;
-        -moz-box-shadow: 0 10px 6px -6px #777;
-        box-shadow: 0 10px 6px -6px #777;
-        background: white;
+        @include themify($themes) {
+            -webkit-box-shadow: 0 10px 6px -6px themed('boxBorderShadow');
+            -moz-box-shadow: 0 10px 6px -6px themed('boxBorderShadow');
+            box-shadow: 0 10px 6px -6px themed('boxBorderShadow');
+            background: white;
+        }
     }
 }
 
 /* Componenets*/
-a, a:hover {
-    color: #AAAAAA;
+a {
+    @include themify($themes) {
+        color: themed('textColor');
+    }
     text-decoration: none;
+    &:hover{
+        @include themify($themes) {
+            color: themed('themedColor');
+        }
+    }
+}
+.notification{
+    p {
+        @include themify($themes) {
+        color: themed('colorWhite');
+        margin: 0;
+      } 
+    }
+    padding: 6px 8px; 
+    border-radius: 5px;
+    &.success{
+        @include themify($themes) {
+            background: themed('colorGreen');
+        }   
+    }
+    &.info{
+        @include themify($themes) {
+            background: themed('colorBlue');
+        }   
+    }
+    &.error{
+        @include themify($themes) {
+            background: themed('colorRed');
+        }   
+    }
 }
 
 /* Define Gaps */
+.lineGap{
+    margin-top:1em;
+}
 .regularGap{
     margin-top:50px;
 }
@@ -399,7 +520,7 @@ a, a:hover {
     position: absolute;
 }
 
-/*  we define color scheme */
+/*  we define color scheme  - We need to how this can effect the theme*/
 .colorScheme{
     color: #111111;
     background: transparent;
@@ -420,16 +541,6 @@ a, a:hover {
         p { 
             color: #ffffff;
         }
-    }
-    .success{
-        color: green;
-    }
-    .error{
-        color: red;
-    }
-    .classicColor{
-        color: #00FF00;
-        background: $color-black;
     }
 }
 
