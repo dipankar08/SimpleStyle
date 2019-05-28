@@ -28,6 +28,7 @@ body {
 
 .theme-white body {
   color: #868e96;
+  background-color: #f2f4f9;
 }
 
 body.inspect div {
@@ -224,6 +225,10 @@ body.inspect div {
   box-shadow: 0px 15px 28px -5px rgba(29, 130, 255, 0.45);
 }
 
+.btna {
+  text-decoration: none;
+}
+
 .btn.secondary {
   color: #111111;
   background-color: transparent;
@@ -414,9 +419,13 @@ p span.batch {
   background: blue;
 }
 
+p a {
+  text-decoration: underline;
+}
+
 /* Define Box - TESTED */
 .box {
-  padding: 3rem !important;
+  padding: 1em;
 }
 
 .theme-white .box {
@@ -459,6 +468,35 @@ p span.batch {
   -webkit-box-shadow: 0 10px 6px -6px;
   box-shadow: 0 10px 6px -6px;
   background: white;
+}
+
+/*Table*/
+table, th, td {
+  border-collapse: collapse;
+}
+
+.theme-white table, .theme-white th, .theme-white td {
+  border-top: 1px solid #e2dddd;
+}
+
+.theme-light table, .theme-light th, .theme-light td {
+  border-top: 1px solid;
+}
+
+.theme-dark table, .theme-dark th, .theme-dark td {
+  border-top: 1px solid;
+}
+
+table td, th td, td td {
+  padding: 22px 10px;
+}
+
+table td:first-child, th td:first-child, td td:first-child {
+  padding-left: 0px;
+}
+
+table td:last-child, th td:last-child, td td:last-child {
+  padding-right: 0px;
 }
 
 /* Componenets*/
@@ -525,6 +563,26 @@ a {
   margin-top: 150px;
 }
 
+.lineHGap {
+  margin-left: 1em;
+}
+
+.regularHGap {
+  margin-left: 20px;
+}
+
+.largeHGap {
+  margin-left: 35px;
+}
+
+.xlargeHGap {
+  margin-left: 50px;
+}
+
+.xxlargeHGap {
+  margin-left: 100px;
+}
+
 /* Define Text Align */
 .textCenter {
   text-align: center;
@@ -549,6 +607,30 @@ a {
 
 .noPadding {
   padding: 0 !important;
+}
+
+.padding {
+  padding: 0;
+}
+
+.padding.s {
+  padding: 4px;
+}
+
+.padding.m {
+  padding: 1em;
+}
+
+.padding.l {
+  padding: 2em;
+}
+
+.padding.xl {
+  padding: 3em;
+}
+
+.padding.xxl {
+  padding: 4em;
 }
 
 /* Defining overlapping layer */
@@ -576,7 +658,7 @@ a {
 
 .colorScheme .invertColor {
   color: #ffffff;
-  background: #111111;
+  background: transparent;
 }
 
 .colorScheme .invertColor a, .colorScheme .invertColor a:hover {
