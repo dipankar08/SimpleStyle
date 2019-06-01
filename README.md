@@ -16,7 +16,7 @@ Below table shows a list of features which is used to build a responsive website
 |Item List| ul.inlineList,  ul.inlineList.oneColumn,ul.inlineList.twoColumn | you can create item list using ul and li with onecolumn, two collom|
 | Text Styleing| p.heroText, .sectionHeading, .sectionSubHeading, .itemHeading, .paragraph, .price | All the text should be wrapper in a p and use the multiple class to have diffrenet text size.|
 | Box | .box, .box.active, .box.active.shadow | This will help you to create box with border, show active box or show shadow |
-| Spacing| .regularGap, .largeGap, .xlargeGap, .xxlargeGap | Provides vertical gapping betweeen two section or components |
+| Spacing| .gap_m, .gap_l, .gap_xl, .gap_xxl | Provides vertical gapping betweeen two section or components |
 | alignment|  .textCenter , .textLeft, .textRight, .alignMiddle | provide multiple text alignment |
 | forms | .inputForm| provide styleing for your input builds just adding one tap on top |
 | buttons | .btn, .btn.primary, .btn.primary.shadow | primary, secondary and shadow button style |

@@ -238,6 +238,7 @@ body {
     -webkit-transition: all 0.15s ease-in-out;
     -o-transition: all 0.15s ease-in-out;
     transition: all 0.15s ease-in-out;
+    text-decoration: none !important;
     &.primary{
         color: $color-white;
         @include themify($themes) {
@@ -500,37 +501,9 @@ a {
 }
 
 /* Define Gaps */
-.lineGap{
-    margin-top:1em;
-}
-.regularGap{
-    margin-top:50px;
-}
-.largeGap{
-    margin-top:75px;
-}
-.xlargeGap{
-    margin-top:100px;
-}
-.xxlargeGap{
-    margin-top:150px;
-}
 
-.lineHGap{
-    margin-left:1em;
-}
-.regularHGap{
-    margin-left:20px;
-}
-.largeHGap{
-    margin-left:35px;
-}
-.xlargeHGap{
-    margin-left:50px;
-}
-.xxlargeHGap{
-    margin-left:100px;
-}
+
+
 
 /* Define Text Align */
 .textCenter{
@@ -553,22 +526,47 @@ a {
     padding: 0 !important;
 }
 
-.padding{
-    padding: 0;
-    &.s{
-        padding: 4px;
+/* define padding */
+$padding_size: (
+  n: 0em,
+  s: .5em,
+  m: 1em,
+  l: 2em,
+  xl:3em,
+  xxl:4em,
+);
+@each $element, $size in $padding_size {
+    .padding_#{$element} {
+        padding: $size;
     }
-    &.m{
-        padding: 1em;
+}
+
+/* Define gaps */
+$gap_szie: (
+  n: 0em,
+  s: 1em,
+  m: 50px,
+  l: 75px,
+  xl:100px,
+  xxl:150px,
+);
+@each $element, $size in $gap_szie {
+    .gap_#{$element} {
+        margin-top: $size;
     }
-    &.l{
-        padding: 2em;
-    }
-    &.xl{
-        padding: 3em;
-    }
-    &.xxl{
-        padding: 4em;
+}
+
+$hgap_szie: (
+  n: 0em,
+  s: 1em,
+  m: 20px,
+  l: 35px,
+  xl:50px,
+  xxl:100px,
+);
+@each $element, $size in $hgap_szie {
+    .hgap_#{$element} {
+        margin-left: $size;
     }
 }
 
