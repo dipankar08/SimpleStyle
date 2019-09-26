@@ -20,7 +20,7 @@ html {
 }
 
 body {
-  font-family: Lato,sans-serif;
+  font-family: Lato, sans-serif;
   font-size: 1rem;
   font-weight: 300;
   line-height: 1.8;
@@ -142,9 +142,11 @@ body.inspect div {
 }
 
 /* Input Form */
-.inputForm input, .inputForm select, .inputForm textarea {
-  -webkit-transition: .3s all ease;
-  transition: .3s all ease;
+.inputForm input,
+.inputForm select,
+.inputForm textarea {
+  -webkit-transition: 0.3s all ease;
+  transition: 0.3s all ease;
   border-radius: 0.25rem;
   display: block;
   width: 100%;
@@ -157,16 +159,22 @@ body.inspect div {
   border: 1px solid transparent;
 }
 
-.theme-white .inputForm input, .theme-white .inputForm select, .theme-white .inputForm textarea {
+.theme-white .inputForm input, .theme-white
+.inputForm select, .theme-white
+.inputForm textarea {
   color: #495057;
   background: #f2f2f2;
 }
 
-.theme-white .inputForm input:focus, .theme-white .inputForm select:focus, .theme-white .inputForm textarea:focus {
+.theme-white .inputForm input:focus, .theme-white
+.inputForm select:focus, .theme-white
+.inputForm textarea:focus {
   border-color: #ffffff;
 }
 
-.inputForm input[type="radio"], .inputForm select[type="radio"], .inputForm textarea[type="radio"] {
+.inputForm input[type="radio"],
+.inputForm select[type="radio"],
+.inputForm textarea[type="radio"] {
   width: auto;
   height: auto;
   display: inline;
@@ -174,19 +182,27 @@ body.inspect div {
   margin-right: 3px;
 }
 
-.inputForm input.success, .inputForm select.success, .inputForm textarea.success {
+.inputForm input.success,
+.inputForm select.success,
+.inputForm textarea.success {
   border: 1px solid;
 }
 
-.theme-white .inputForm input.success, .theme-white .inputForm select.success, .theme-white .inputForm textarea.success {
+.theme-white .inputForm input.success, .theme-white
+.inputForm select.success, .theme-white
+.inputForm textarea.success {
   border-color: green;
 }
 
-.inputForm input.error, .inputForm select.error, .inputForm textarea.error {
+.inputForm input.error,
+.inputForm select.error,
+.inputForm textarea.error {
   border: 1px solid;
 }
 
-.theme-white .inputForm input.error, .theme-white .inputForm select.error, .theme-white .inputForm textarea.error {
+.theme-white .inputForm input.error, .theme-white
+.inputForm select.error, .theme-white
+.inputForm textarea.error {
   border-color: red;
 }
 
@@ -267,6 +283,26 @@ ul.twoColumn li {
   margin-bottom: 45px;
 }
 
+/* Key value List */
+ul.key_value {
+  width: 100%;
+}
+
+ul.key_value li {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  border-top: 1px dashed rgba(0, 0, 0, 0.3);
+}
+
+ul.key_value li p:last-child {
+  text-align: right;
+}
+
 .navBar {
   z-index: 100;
   width: 100%;
@@ -280,8 +316,8 @@ ul.twoColumn li {
   top: 0;
   margin-top: -130px;
   background: #fff;
-  -webkit-transition: .3s all ease-out;
-  transition: .3s all ease-out;
+  -webkit-transition: 0.3s all ease-out;
+  transition: 0.3s all ease-out;
   -webkit-box-shadow: 0px 1px 10px -2px rgba(0, 0, 0, 0.15);
   box-shadow: 0px 1px 10px -2px rgba(0, 0, 0, 0.15);
   color: #111;
@@ -311,7 +347,6 @@ ul.twoColumn li {
 p {
   display: block;
   width: 100%;
-  margin-top: 1em;
 }
 
 .theme-white p {
@@ -472,31 +507,45 @@ p a {
 }
 
 /*Table*/
-table, th, td {
+table,
+th,
+td {
   border-collapse: collapse;
 }
 
-.theme-white table, .theme-white th, .theme-white td {
+.theme-white table, .theme-white
+th, .theme-white
+td {
   border-top: 1px solid #e2dddd;
 }
 
-.theme-light table, .theme-light th, .theme-light td {
+.theme-light table, .theme-light
+th, .theme-light
+td {
   border-top: 1px solid;
 }
 
-.theme-dark table, .theme-dark th, .theme-dark td {
+.theme-dark table, .theme-dark
+th, .theme-dark
+td {
   border-top: 1px solid;
 }
 
-table td, th td, td td {
+table td,
+th td,
+td td {
   padding: 22px 10px;
 }
 
-table td:first-child, th td:first-child, td td:first-child {
+table td:first-child,
+th td:first-child,
+td td:first-child {
   padding-left: 0px;
 }
 
-table td:last-child, th td:last-child, td td:last-child {
+table td:last-child,
+th td:last-child,
+td td:last-child {
   padding-right: 0px;
 }
 
@@ -659,8 +708,9 @@ a {
   background: transparent;
 }
 
-.colorScheme a, .colorScheme a:hover {
-  color: #AAAAAA;
+.colorScheme a,
+.colorScheme a:hover {
+  color: #aaaaaa;
 }
 
 .colorScheme p.sectionSubHeading {
@@ -672,11 +722,30 @@ a {
   background: transparent;
 }
 
-.colorScheme .invertColor a, .colorScheme .invertColor a:hover {
+.colorScheme .invertColor a,
+.colorScheme .invertColor a:hover {
   color: #ffffff;
 }
 
 .colorScheme .invertColor p {
   color: #ffffff;
+}
+
+/* DashBoard Box */
+.dbox {
+  background: green;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
+  font-size: 1.5rem;
+}
+
+.dbox .title {
+  font-weight: bold;
+  font-size: 3.5rem;
+}
+
+.dbox p {
+  margin-top: 0;
 }
 /*# sourceMappingURL=simplestyle.css.map */
