@@ -566,27 +566,19 @@
   }
   
   /*Table*/
-  table,
-  th,
-  td {
-    @include themify($themes) {
-      border-top: 1px solid themed("colorExtremeLight");
+   table {
+    width: 100%;
+
     }
-  
-    border-collapse: collapse;
-  
-    td {
-      padding: 22px 10px;
-  
-      &:first-child {
-        padding-left: 0px;
-      }
-  
-      &:last-child {
-        padding-right: 0px;
-      }
+    table, tr, td {
+            border: 1px solid rgba(0,0,0,0.5);
+            border-collapse: collapse;
     }
-  }
+    td{
+            padding: 5px 10px !important;
+    }
+    tr:nth-child(even){background: rgba(0,0,0,0.05);}
+    tr:first-child{background: rgba(0,0,0,1);color: white;}
   
   /* Componenets*/
   a {

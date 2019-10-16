@@ -546,46 +546,26 @@ p a {
 }
 
 /*Table*/
-table,
-th,
-td {
+table {
+  width: 100%;
+}
+
+table, tr, td {
+  border: 1px solid rgba(0, 0, 0, 0.5);
   border-collapse: collapse;
 }
 
-.theme-white table, .theme-white
-th, .theme-white
 td {
-  border-top: 1px solid #e2dddd;
+  padding: 5px 10px !important;
 }
 
-.theme-light table, .theme-light
-th, .theme-light
-td {
-  border-top: 1px solid;
+tr:nth-child(even) {
+  background: rgba(0, 0, 0, 0.05);
 }
 
-.theme-dark table, .theme-dark
-th, .theme-dark
-td {
-  border-top: 1px solid;
-}
-
-table td,
-th td,
-td td {
-  padding: 22px 10px;
-}
-
-table td:first-child,
-th td:first-child,
-td td:first-child {
-  padding-left: 0px;
-}
-
-table td:last-child,
-th td:last-child,
-td td:last-child {
-  padding-right: 0px;
+tr:first-child {
+  background: black;
+  color: white;
 }
 
 /* Componenets*/
