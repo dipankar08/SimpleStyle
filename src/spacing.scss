@@ -1,0 +1,51 @@
+// This will cover my spacialing and typegrapgy
+
+// generate Margin and Padding
+@for $i from 1 through 50 {
+    .dp#{$i} {
+        padding: 1px * $i !important;
+    }
+    .dpt#{$i} {
+        padding-top: 1px * $i !important;
+    }
+    .dpl#{$i} {
+        padding-left: 1px * $i !important;
+    }
+    .dpr#{$i} {
+        padding-right: 1px * $i !important;
+    }
+    .dpb#{$i} {
+        padding-bottom: 1px * $i !important;
+    }
+    .dpx#{$i} {
+        padding-left: 1px * $i !important;
+        padding-right: 1px * $i !important ;
+    }
+    .dpy#{$i} {
+        padding-top: 1px * $i !important;
+        padding-bottom: 1px * $i !important;
+    }
+    .dm#{$i} {
+        margin: 1px * $i !important;
+    }
+    .dmt#{$i} {
+        margin-top: 1px * $i !important;
+    }
+    .dml#{$i} {
+        margin-left: 1px * $i !important;
+    }
+    .dmr#{$i} {
+        margin-right: 1px * $i !important;
+    }
+    .dmb#{$i} {
+        margin-bottom: 1px * $i !important;
+    }
+    .dmx#{$i} {
+        margin-left: 1px * $i !important;
+        margin-right: 1px * $i !important;
+    }
+    .dmy#{$i} {
+        margin-top: 1px * $i !important;
+        margin-bottom: 1px * $i !important;
+    }
+}

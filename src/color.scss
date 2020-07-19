@@ -1,0 +1,27 @@
+.d_text_bold{
+    font-weight: bold;
+}
+.d_text_itelic{
+    font-weight: bold;
+}
+.d_text_title{
+    font-size: 20px;
+    font-weight: bold;
+}
+.d_text_subtitle{
+    opacity: .5;
+}
+
+// Multiply of four
+// fontsize => fs4
+// borderradious: => br4
+@for $item from 1 through 20 {
+    $i: $item * 4;
+    .d_fs#{$i} {
+        font-size: #{$i}px !important;
+     }
+     .d_br#{$i} {
+        border-radius: #{$i}px !important;
+    }
+}
+
