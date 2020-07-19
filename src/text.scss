@@ -17,7 +17,7 @@
 // borderradious: => br4
 @for $item from 1 through 20 {
     $i: $item * 4;
-    .d_fs#{$i} {
+    .d_text_fs#{$i} {
         font-size: #{$i}px !important;
      }
      .d_br#{$i} {

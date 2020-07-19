@@ -2,49 +2,49 @@
 
 // generate Margin and Padding
 @for $i from 1 through 50 {
-    .dp#{$i} {
+    .d_p#{$i} {
         padding: 1px * $i !important;
     }
-    .dpt#{$i} {
+    .d_pt#{$i} {
         padding-top: 1px * $i !important;
     }
-    .dpl#{$i} {
+    .d_pl#{$i} {
         padding-left: 1px * $i !important;
     }
-    .dpr#{$i} {
+    .d_pr#{$i} {
         padding-right: 1px * $i !important;
     }
-    .dpb#{$i} {
+    .d_pb#{$i} {
         padding-bottom: 1px * $i !important;
     }
-    .dpx#{$i} {
+    .d_px#{$i} {
         padding-left: 1px * $i !important;
         padding-right: 1px * $i !important ;
     }
-    .dpy#{$i} {
+    .d_py#{$i} {
         padding-top: 1px * $i !important;
         padding-bottom: 1px * $i !important;
     }
-    .dm#{$i} {
+    .d_m#{$i} {
         margin: 1px * $i !important;
     }
-    .dmt#{$i} {
+    .d_mt#{$i} {
         margin-top: 1px * $i !important;
     }
-    .dml#{$i} {
+    .d_ml#{$i} {
         margin-left: 1px * $i !important;
     }
-    .dmr#{$i} {
+    .d_mr#{$i} {
         margin-right: 1px * $i !important;
     }
-    .dmb#{$i} {
+    .d_mb#{$i} {
         margin-bottom: 1px * $i !important;
     }
-    .dmx#{$i} {
+    .d_mx#{$i} {
         margin-left: 1px * $i !important;
         margin-right: 1px * $i !important;
     }
-    .dmy#{$i} {
+    .d_my#{$i} {
         margin-top: 1px * $i !important;
         margin-bottom: 1px * $i !important;
     }

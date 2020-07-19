@@ -1,0 +1,15 @@
+.d_box {
+  border-width: 1px 1px 1px 1px;
+  border-color: #ccd0d5;
+  border-style: solid;
+  border-radius: 4px;
+  background: white;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+          box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+  padding: 25px 50px;
+}
+
+.d_box.border_right {
+  border-left: 4px solid #d83e3c;
+}
+/*# sourceMappingURL=box.css.map */

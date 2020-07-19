@@ -1,0 +1,22 @@
+.separator {
+    display: flex;
+    height: 30px;
+    line-height: 30px;
+    color: #7a8b99;
+    margin: 15px 0;
+    &:after,&:before {
+        content: ' ';
+        display: inline-block;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        height: 1px;
+        margin-top: 15px;
+        background: #4b555e;
+    }
+    &:before {
+        margin-right: 10px;
+    }
+    &:after {
+        margin-left: 10px;
+    }
+}

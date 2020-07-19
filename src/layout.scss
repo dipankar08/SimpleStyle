@@ -9,8 +9,13 @@
     position: relative;
     width: 100%;
     height: 100%;
+    > div {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+    }
 }
-.d_layout_row, .d_layout_col,.d_layout_row,.d_layout_col{
+.d_layout_row, .d_layout_col{
     display: flex;
     position: relative;
     &.d_layout_row,.d_layout_row {
@@ -155,10 +160,16 @@
         position: relative;
     }
 }
+
 // This is maily used for widescreen 
-.layout_section{
+.d_layout_section{
     width: 940;
     margin: 40 auto;
+}
+// This is maily used for widescreen 
+.d_layout_container{
+    width: 940;
+    margin: 0 auto;
 }
 
 

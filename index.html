@@ -3,10 +3,92 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" type="text/css" href="./dist/main.css"/>
+    <link rel="stylesheet" type="text/css" href="src/main.css"/>
+    <style>
+        div {
+            border: 1px solid red;
+        }
+    </style>
 </head>
 <body>
     <h1> Layout</h1>
+    <h2>d_layout_[container, section, absolute, relative]</h2>
+    <div class="d_layout_container">d_layout_container</div>
+    <div class="d_layout_section">d_layout_section</div>
+    <h2>d_layout_frame</h2>
+    <div class="d_layout_frame" style="height:100px">
+        <div>Frame 1</div>
+        <div>Frame 2</div>
+        <div>Frame 3</div>
+    </div>
+
+    <h2>d_layout_col : Place child in col</h2>
+    <div class="d_layout_col">
+        <div> d_layout_col </div>
+        <div> d_layout_col </div>
+        <div> d_layout_col </div>
+    </div>
+    <h2>d_layout_row: Place child in row</h2>
+    <div class="d_layout_row">
+        <div> d_layout_row </div>
+        <div> d_layout_row </div>
+        <div> d_layout_row </div>
+    </div>
+
+    <h2>d_layout_fill, d_layout_wrap, d_layout_equal, d_layout_split</h2>
+    <div class="d_layout_row">
+        <div class="d_layout_fill"> d_layout_fill </div>
+        <div> d_layout_row </div>
+        <div> d_layout_row </div>
+    </div>
+
+    <div class="d_layout_row d_layout_equal mt-10">
+        <div> d_layout_fill </div>
+        <div> d_layout_row </div>
+        <div> d_layout_row </div>
+    </div>
+
+    <h2>d_align_h[..], d_align_v[...] d_align_t[...]</h2>
+    <div class="d_layout_row d_layout_equal mt-10 d_align_h_center">
+        <div> d_align_h_center </div>
+        <div> d_layout_row </div>
+        <div> d_layout_row </div>
+    </div>
+    <div class="d_layout_col d_layout_equal mt-10 d_align_h_right">
+        <div class="d_align_t_right"> d_align_t_right </div>
+        <div> d_layout_row </div>
+        <div> d_layout_row </div>
+    </div>
+
+    <h2>Margin and Padding</h2>
+    <p>
+        <button class="d_p20">d_p12</button>
+        <button class="d_pt20">d_pt12</button>
+        <button class="d_pb20">d_pb12</button>
+        <button class="d_pl20">d_pl12</button>
+        <button class="d_pr20">d_pr12</button>
+        <button class="d_px20">d_px12</button>
+        <button class="d_py20">d_py12</button>
+    </p>
+
+    <h2> Text : text_fs_*, text_bold. d_text_itelic </h2>
+    <p class="d_text_fs8">d_text_fs8</p>
+    <p class="d_text_fs12">d_text_fs12</p>
+    <p class="d_text_fs16">d_text_fs16</p>
+    <p class="d_text_fs20">d_text_fs20</p>
+    <p class="d_text_fs24">d_text_fs24</p>
+    <p class="d_text_fs28">d_text_fs28</p>
+
+    <h2> Box Design </h2>
+    <div class="d_box"> Box</div>
+    <div class="d_box border_right"> Box</div>
+
+    <h2> Components </h2>
+    <div class="d_my10 separator">separator</div>
+
+
+
+
 
 </body>
 </html>

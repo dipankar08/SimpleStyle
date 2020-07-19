@@ -1,0 +1,12 @@
+.d_box {
+    border-width: 1px 1px 1px 1px;
+    border-color: rgb(204, 208, 213);
+    border-style: solid;
+    border-radius: 4px;
+    background: rgb(255, 255, 255);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 2px 0px;
+    padding: 25px 50px;
+    &.border_right{
+        border-left: 4px solid rgb(216, 62, 60);
+    }
+}
