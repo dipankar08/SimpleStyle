@@ -1,0 +1,20 @@
+.separator {
+  display: flex;
+  height: 30px;
+  line-height: 30px;
+  color: #7a8b99;
+  margin: 15px 0; }
+  .separator:after, .separator:before {
+    content: ' ';
+    display: inline-block;
+    -ms-flex-positive: 1;
+    flex-grow: 1;
+    height: 1px;
+    margin-top: 15px;
+    background: #4b555e; }
+  .separator:before {
+    margin-right: 10px; }
+  .separator:after {
+    margin-left: 10px; }
+
+/*# sourceMappingURL=component.css.map */
