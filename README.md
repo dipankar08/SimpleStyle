@@ -5,7 +5,9 @@ World's simplest web UI layout framework. This provides the key dom classes whic
 Please put the below lines in head. 
 `
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/dipankar08/SimpleStyle/simplestyle.css" />
+        <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/dipankar08/SimpleStyle/simplestyle.css" /> <<< NOT WORKING ANY MOTE
+        
+        <link rel="stylesheet" type="text/css" href="https://raw.githack.com/dipankar08/SimpleStyle/master/simplestyle.css" />
         <script src="https://cdn.jsdelivr.net/gh/dipankar08/SimpleStyle/simplestyle.js"></script>
 `
 
