@@ -15,27 +15,44 @@
         height: 100%;
     }
 }
-.d_layout_row, .d_layout_col{
+.d_layout_row {
     display: flex;
     position: relative;
-    &.d_layout_row,.d_layout_row {
-        flex-direction: row;
-        display: flex;
+    flex-direction: row;
+}
+    /* Axix: center(c), left(l), right(r), s(space between)
+    &.cc{
+        justify-content: space-evenly | center;
+        align-items: center;
     }
-    &.d_layout_col,.d_layout_col {
-        flex-direction: column;
-        display: flex;
+    &.lc{
+        justify-content: center;
+        align-items: center;
     }
-    // make all in center
-    &.d_align_h_center {
-        > * {
-            justify-content: center;
-            justify-content: space-around;
-            text-align: center;
-            margin: 0 auto;
-        }
+    &.rc{
+        justify-content: center;
+        align-items: center;
+    }
+    &.sc{
+        justify-content: center;
+        align-items: center;
     }
 }
+
+*/
+.d_layout_col{
+    display: flex;
+    position: relative;
+    flex-direction: column;
+}
+
+.center{
+    justify-content: center;
+    justify-content: space-around;
+    text-align: center;
+    margin: 0 auto;
+}
+
 .d_layout_fill,._lfi{
     flex: 1;
     display: flex;
@@ -49,6 +66,31 @@
         flex: 1;
     }
 }
+
+/*************  Align logic ************/
+// test
+.d_align_text_left{
+    text-align: left;
+}
+.d_align_text_right{
+    text-align: right;
+}
+.d_align_text_center{
+    text-align: center;
+}
+//div
+.d_align_div_center{
+    margin: 0 auto;
+}
+.d_align_item_edge {
+
+}
+.d_align_item_each_other {
+    
+}
+
+
+
 // d_align_h_*, d_align_v_*, d_align_a_*
 .d_align_h_center{
     justify-content: center;
